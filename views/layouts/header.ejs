@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/favicon.png">
+    <title><%= locals.title || 'Welcome!' %></title>
+
+    <% if (locals.includes && locals.includes.length > 0) { %>
+        <% includes.forEach(filename => { %>
+            <%- include(filename) -%> 
+        <% }) %>
+    <% } %>
+
+    <% if (locals.styles && locals.styles.length > 0) { %>
+        <% styles.forEach(style => { %>
+            <link rel="stylesheet" href="<%= style %>">
+        <% }) %>
+    <% } %>
+    
+    <% if (locals.scripts && locals.scripts.length > 0) { %>
+        <% scripts.forEach(script => { %>
+            <script src="<%= script %>"></script>
+        <% }) %>
+    <% } %>
+</head>
+<body>

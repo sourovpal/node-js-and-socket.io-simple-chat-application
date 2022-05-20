@@ -1,0 +1,80 @@
+<%- include('../layouts/header', {
+    includes:['styles'],
+}); %>
+
+
+
+
+<div class="home-page">
+    <div class="inner">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="box">
+                        <div class="row">
+                            <div class="col-3 pe-0">
+                                <div class="sidebar">
+                                    <div class="inner">
+                                        <div class="">
+                                            <h4 class="sidebar-title">User List <%= locals.user.f_name  %> </h4>
+                                        </div>
+                                        <ul class="list-unstyled user-list">
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-9 ps-0">
+                                <div class="message-box">
+                                    <div class="box-header d-flex justify-content-between align-items-center">
+                                        <div id="select__user">
+                                            <h2 class="text-secondary mb-0">Welcome!</h2>
+                                        </div>
+                                        <div class="">
+                                            <a href="/logout">Logout</a>
+                                        </div>
+                                    </div>
+                                    <div class="box-body">
+                                        <div class="chat-box" id="chat__box_message">
+                                            <!--  -->
+                                            <!-- <div class="message friend">
+                                                <div class="message-text">
+                                                    <span class="text">Hello Test.</span>
+                                                </div>
+                                            </div>
+                                            <div class="message me">
+                                                <div class="message-text">
+                                                    <span class="text">Hello Test.</span>
+                                                </div>
+                                            </div> -->
+                                            <!--  -->
+                                        </div>
+                                    </div>
+                                    <div class="box-footer">
+                                        <div class="d-flex">
+                                            <input id="input_message" class="input__message" type="text" placeholder="Type message......">
+                                            <button id="send_message_btn" class="send_btn">Send</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    var user_id = <%= locals.user.id %>
+</script>
+
+<%- include('../layouts/footer', {
+    scripts:[
+        '/socket.io/socket.io.js', 
+        '/asset/moment/moment.min.js', 
+        '/js/script.js'
+    ]
+}); %>

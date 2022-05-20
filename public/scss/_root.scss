@@ -1,0 +1,13 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+}
+@for $i from 1 to 50 {
+    .fs-#{$i}{
+        font-size:#{$i}px;
+    }
+}
+.active-color{
+    color:#07d13c;
+}

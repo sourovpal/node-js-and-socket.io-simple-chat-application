@@ -1,0 +1,12 @@
+<% if (locals.includes && locals.includes.length > 0) { %>
+    <% includes.forEach(filename => { %>
+        <%- include(filename) -%> 
+    <% }) %>
+<% } %>
+<% if (locals.scripts && locals.scripts.length > 0) { %>
+    <% scripts.forEach(script => { %>
+        <script src="<%= script %>"></script>
+    <% }) %>
+<% } %>
+    </body>
+</html>
